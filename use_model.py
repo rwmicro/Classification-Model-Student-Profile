@@ -2,12 +2,10 @@ import tensorflow as tf
 import pandas as pd
 import numpy as np
 
-model = tf.keras.models.load_model('models/settings')
+model = tf.keras.models.load_model('./models/settings')
 
-CLASS_NAMES = {'Junior Network Administrator', 'Junior Programmer'}
-
-# Check its architecture
-model.summary()
+CLASS_NAMES = {'Junior Network Administrator',
+               'Junior Programmer', 'Junior Web Programmer'}
 
 sample = {
     "iq": 139,
@@ -38,4 +36,3 @@ input_dict = {name: tf.convert_to_tensor(
     [value]) for name, value in sample.items()}
 predictions = np.argmax(model.predict(input_dict))
 predictions = pd.DataFrame(CLASS_NAMES)[0][predictions]
-print(predictions)
