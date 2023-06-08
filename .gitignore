@@ -1,0 +1,6 @@
+structured_data_classifier/
+data/datas.csv
+data/student_grades.csv
+data/student_interests.csv
+.ipynb_checkpoints/
+.conda/
